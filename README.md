@@ -1,4 +1,13 @@
-This version is a fork for the Prusa MMU2s connected to a SKR 1.4 .
+This version is a fork for the Prusa MMU2s connected to a SKR 1.4 
+Take care on the right amount of filament pushed to the extruder.
+In configuration_adv.h search for MMU2_CAN_LOAD_SEQUENCE and adjust
+YOUR needed values!!! Important are also the settings for the IR-sensor
+used for filament runout.
+
+ #define MMU2_CAN_LOAD_SEQUENCE \
+      {  0.1, MMU2_CAN_LOAD_FEEDRATE }, \
+      {  60.0, MMU2_CAN_LOAD_FEEDRATE }, \
+      { -52.0, MMU2_CAN_LOAD_FEEDRATE }
 
 
 <p align="center"><img src="buildroot/share/pixmaps/logo/marlin-outrun-nf-500.png" height="250" alt="MarlinFirmware's logo" /></p>
